@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}
+History — PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-header">
+
+    <p class="eyebrow">
+        YOUR PLANS
+    </p>
+
+    <h1>
+        Recommendation History
+    </h1>
+
+    <p>
+        Previous planning requests are
+        stored locally in your application database.
+    </p>
+
+</div>
+
+
+{% if records %}
+
+<div class="history-list">
+
+{% for record in records %}
+
+    <article class="history-card">
+
+        <div>
+
+            <span class="tag">
+                {{ record.planner_type }}
+            </span>
+
+            <h3>
+                ₹{{ "{:,}".format(record.budget) }}
+                budget
+            </h3>
+
+            <p class="muted">
+                {{ record.created_at }}
+            </p>
+
+        </div>
+
+
+        <button
+            class="button secondary"
+            onclick="loadHistory(Number('{{ record.id }}'))"
+        >
+            View
+        </button>
+
+    </article>
+
+{% endfor %}
+
+</div>
+
+
+<div
+    id="historyResult"
+    class="result-panel"
+></div>
+
+
+{% else %}
+
+<div class="empty large">
+
+    No recommendations yet.
+
+    Start with a planner
+    from your dashboard.
+
+</div>
+
+{% endif %}
+
+{% endblock %}

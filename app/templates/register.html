@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register — PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="auth-wrap">
+
+    <div class="auth-card">
+
+        <p class="eyebrow">
+            START PLANNING
+        </p>
+
+        <h1>
+            Create account
+        </h1>
+
+
+        {% if error %}
+
+        <div class="alert">
+            {{ error }}
+        </div>
+
+        {% endif %}
+
+
+        <form
+            method="post"
+            action="/register"
+            class="form"
+        >
+
+            <label>
+
+                Username
+
+                <input
+                    name="username"
+                    required
+                    minlength="3"
+                    maxlength="80"
+                >
+
+            </label>
+
+
+            <label>
+
+                Password
+
+                <input
+                    name="password"
+                    type="password"
+                    required
+                    minlength="6"
+                >
+
+            </label>
+
+
+            <button
+                class="button primary full"
+            >
+                Register
+            </button>
+
+        </form>
+
+
+        <p class="muted">
+
+            Already registered?
+
+            <a href="/login">
+                Login
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

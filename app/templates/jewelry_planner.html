@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block title %}
+Jewelry Planner — PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-header">
+
+    <p class="eyebrow">
+        PLANNER 03
+    </p>
+
+    <h1>
+        Jewelry Planner
+    </h1>
+
+    <p>
+        Match occasion, style and budget.
+        Optionally upload an outfit image
+        for visual context.
+    </p>
+
+</div>
+
+
+<div class="planner-layout">
+
+
+<form
+    id="jewelryForm"
+    class="panel form"
+    enctype="multipart/form-data"
+>
+
+    <label>
+
+        Total budget (₹)
+
+        <input
+            name="budget"
+            type="number"
+            min="1"
+            required
+            placeholder="10000"
+        >
+
+    </label>
+
+
+    <label>
+
+        Occasion
+
+        <select name="occasion">
+
+            <option>
+                Wedding
+            </option>
+
+            <option>
+                Engagement
+            </option>
+
+            <option>
+                Party
+            </option>
+
+            <option>
+                College Event
+            </option>
+
+            <option>
+                Festival
+            </option>
+
+            <option>
+                Casual
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Style
+
+        <select name="style">
+
+            <option>
+                Elegant
+            </option>
+
+            <option>
+                Traditional
+            </option>
+
+            <option>
+                Minimalist
+            </option>
+
+            <option>
+                Statement
+            </option>
+
+            <option>
+                Trendy
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Metal preference
+
+        <select name="metal">
+
+            <option>
+                Any
+            </option>
+
+            <option>
+                Gold tone
+            </option>
+
+            <option>
+                Silver tone
+            </option>
+
+            <option>
+                Rose gold tone
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Outfit color
+
+        <input
+            name="outfit_color"
+            placeholder="Example: maroon"
+        >
+
+    </label>
+
+
+    <label>
+
+        Extra preferences
+
+        <textarea
+            name="preferences"
+            placeholder="Example: lightweight, no heavy necklace"
+        ></textarea>
+
+    </label>
+
+
+    <label>
+
+        Outfit image (optional)
+
+        <input
+            name="outfit_image"
+            type="file"
+            accept="image/png,image/jpeg,image/webp"
+        >
+
+    </label>
+
+
+    <button
+        class="button primary full"
+    >
+        Generate Jewelry Plan
+    </button>
+
+</form>
+
+
+<div
+    id="jewelryResult"
+    class="result-panel"
+>
+
+    <div class="empty">
+        Your AI plan will appear here.
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+    setupJewelryPlanner();
+</script>
+
+{% endblock %}

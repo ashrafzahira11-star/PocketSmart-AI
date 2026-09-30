@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}
+Party Planner — PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-header">
+
+    <p class="eyebrow">
+        PLANNER 02
+    </p>
+
+    <h1>
+        Party Planner
+    </h1>
+
+    <p>
+        Balance food, venue,
+        decoration and entertainment.
+    </p>
+
+</div>
+
+
+<div class="planner-layout">
+
+
+<form
+    id="partyForm"
+    class="panel form"
+>
+
+    <label>
+
+        Total budget (₹)
+
+        <input
+            id="partyBudget"
+            type="number"
+            min="1"
+            required
+            placeholder="30000"
+        >
+
+    </label>
+
+
+    <label>
+
+        Number of guests
+
+        <input
+            id="partyGuests"
+            type="number"
+            min="1"
+            required
+            placeholder="30"
+        >
+
+    </label>
+
+
+    <label>
+
+        Event type
+
+        <select id="partyType">
+
+            <option>
+                Birthday
+            </option>
+
+            <option>
+                Wedding
+            </option>
+
+            <option>
+                Engagement
+            </option>
+
+            <option>
+                Corporate
+            </option>
+
+            <option>
+                Family Gathering
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Venue / area
+
+        <input
+            id="partyVenue"
+            placeholder="Example: Chennai, indoor hall"
+        >
+
+    </label>
+
+
+    <label>
+
+        Preferences
+
+        <textarea
+            id="partyPreferences"
+            placeholder="Example: vegetarian food, simple decoration"
+        ></textarea>
+
+    </label>
+
+
+    <button
+        class="button primary full"
+    >
+        Generate Party Plan
+    </button>
+
+</form>
+
+
+<div
+    id="partyResult"
+    class="result-panel"
+>
+
+    <div class="empty">
+        Your AI plan will appear here.
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+    setupPartyPlanner();
+</script>
+
+{% endblock %}

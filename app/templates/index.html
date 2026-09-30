@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block title %}
+PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="hero">
+
+    <div>
+
+        <p class="eyebrow">
+            GENAI BUDGET ASSISTANT
+        </p>
+
+        <h1>
+            Plan smarter.
+            <br>
+            <span>
+                Spend with confidence.
+            </span>
+        </h1>
+
+        <p class="hero-text">
+
+            PocketSmart AI turns your
+            budget, preferences and optional
+            outfit image into structured
+            recommendations for home
+            interiors, parties and jewelry.
+
+        </p>
+
+        <div class="actions">
+
+            {% if user %}
+
+                <a
+                    class="button primary"
+                    href="/dashboard"
+                >
+                    Open Dashboard
+                </a>
+
+            {% else %}
+
+                <a
+                    class="button primary"
+                    href="/register"
+                >
+                    Create Account
+                </a>
+
+                <a
+                    class="button secondary"
+                    href="/login"
+                >
+                    Login
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="spark">
+            ✦
+        </div>
+
+        <h3>
+            One budget. Smarter choices.
+        </h3>
+
+        <p>
+            AI planning + transparent
+            estimates + retailer search links.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            THREE SMART PLANNERS
+        </p>
+
+        <h2>
+            Built around everyday decisions
+        </h2>
+
+    </div>
+
+
+    <div class="grid three">
+
+        <article class="feature-card">
+
+            <div class="icon">
+                ⌂
+            </div>
+
+            <h3>
+                Home
+            </h3>
+
+            <p>
+                Allocate a home budget across
+                furniture, lighting, decor
+                and storage.
+            </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+            <div class="icon">
+                ✦
+            </div>
+
+            <h3>
+                Party
+            </h3>
+
+            <p>
+                Plan food, venue, decoration
+                and entertainment around
+                your guest count.
+            </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+            <div class="icon">
+                ◇
+            </div>
+
+            <h3>
+                Jewelry
+            </h3>
+
+            <p>
+                Get occasion and style-aware
+                jewelry ideas with optional
+                outfit image input.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="notice">
+
+    <strong>
+        Price note:
+    </strong>
+
+    AI prices are estimates.
+    Always verify the final price,
+    seller, stock, delivery and
+    return policy on the linked platform.
+
+</section>
+
+{% endblock %}

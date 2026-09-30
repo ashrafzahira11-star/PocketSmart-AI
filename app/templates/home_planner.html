@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Planner — PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-header">
+
+    <p class="eyebrow">
+        PLANNER 01
+    </p>
+
+    <h1>
+        Home Interior
+    </h1>
+
+    <p>
+        Build a room setup without
+        losing control of your budget.
+    </p>
+
+</div>
+
+
+<div class="planner-layout">
+
+
+<form
+    id="homeForm"
+    class="panel form"
+>
+
+    <label>
+
+        Total budget (₹)
+
+        <input
+            id="homeBudget"
+            type="number"
+            min="1"
+            required
+            placeholder="50000"
+        >
+
+    </label>
+
+
+    <label>
+
+        Rooms
+
+        <select
+            id="homeRooms"
+            multiple
+            required
+        >
+
+            <option>
+                Living Room
+            </option>
+
+            <option>
+                Bedroom
+            </option>
+
+            <option>
+                Kitchen
+            </option>
+
+            <option>
+                Dining Room
+            </option>
+
+            <option>
+                Study Room
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <small>
+        Hold Ctrl (Windows) to select multiple rooms.
+    </small>
+
+
+    <label>
+
+        Style
+
+        <select id="homeStyle">
+
+            <option>
+                Modern
+            </option>
+
+            <option>
+                Minimalist
+            </option>
+
+            <option>
+                Traditional
+            </option>
+
+            <option>
+                Bohemian
+            </option>
+
+            <option>
+                Contemporary
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Priorities
+
+        <textarea
+            id="homePriorities"
+            placeholder="Example: storage, warm lighting, low maintenance"
+        ></textarea>
+
+    </label>
+
+
+    <button
+        class="button primary full"
+    >
+        Generate Home Plan
+    </button>
+
+</form>
+
+
+<div
+    id="homeResult"
+    class="result-panel"
+>
+
+    <div class="empty">
+        Your AI plan will appear here.
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+    setupHomePlanner();
+</script>
+
+{% endblock %}

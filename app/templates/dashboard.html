@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard — PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-header">
+
+    <p class="eyebrow">
+        HELLO, {{ user.username|upper }}
+    </p>
+
+    <h1>
+        Choose your planner
+    </h1>
+
+    <p>
+        Tell PocketSmart AI what you need
+        and keep the plan inside your budget.
+    </p>
+
+</section>
+
+
+<div class="grid three">
+
+    <a
+        class="planner-card"
+        href="/home-planner"
+    >
+
+        <span class="big-icon">
+            ⌂
+        </span>
+
+        <h2>
+            Home Interior
+        </h2>
+
+        <p>
+            Rooms, style, priorities
+            and budget allocation.
+        </p>
+
+        <span class="arrow">
+            →
+        </span>
+
+    </a>
+
+
+    <a
+        class="planner-card"
+        href="/party-planner"
+    >
+
+        <span class="big-icon">
+            ✦
+        </span>
+
+        <h2>
+            Party Planner
+        </h2>
+
+        <p>
+            Guests, event type, venue
+            and spending plan.
+        </p>
+
+        <span class="arrow">
+            →
+        </span>
+
+    </a>
+
+
+    <a
+        class="planner-card"
+        href="/jewelry-planner"
+    >
+
+        <span class="big-icon">
+            ◇
+        </span>
+
+        <h2>
+            Jewelry
+        </h2>
+
+        <p>
+            Occasion, style, metal
+            and optional outfit image.
+        </p>
+
+        <span class="arrow">
+            →
+        </span>
+
+    </a>
+
+</div>
+
+{% endblock %}
